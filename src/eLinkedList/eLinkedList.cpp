@@ -3,7 +3,3 @@
 //
 
 #include "../../include/eStl/eLinkedList/eLinkedList.h"
-
-eLinkedList::eLinkedList() {
-
-}
