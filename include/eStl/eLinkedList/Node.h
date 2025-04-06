@@ -9,6 +9,9 @@ template<typename T>
 struct Node {
     T val;
     Node *next;
+
+    Node(): val(T()), next(nullptr){};
+    explicit Node(T val): val(val), next(nullptr){};
 };
 
 
