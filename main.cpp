@@ -71,6 +71,10 @@ int main() {
     cout << list2.back() << endl;
     cout << list3.back() << endl;
 
+    list.show();
+    list2.show();
+    list3.show();
+
     cout << "Comprobar longitud de la lista: " << endl;
     cout << list.size() << endl;
     cout << list2.size() << endl;
@@ -97,6 +101,8 @@ int main() {
     list2.show();
 
     cout << list3.pop_front() << endl;
+    list.show();
+    list2.show();
     list3.show();
 
     cout << "Borrar ultimo elemento de la lista: " << endl;
@@ -107,9 +113,11 @@ int main() {
     list2.show();
 
     cout << list3.pop_back() << endl;
+    list.show();
+    list2.show();
     list3.show();
 
-    cout << "Retornar elemento en la posicion (2): " << endl;
+    cout << "Retornar elemento en la posicion: " << endl;
     cout << list[2] << endl;
     cout << list2[3] << endl;
     cout << list3[1] << endl;
