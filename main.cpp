@@ -3,11 +3,9 @@
 //
 
 #include <iostream>
-#include "./include/eStl/eLinkedList/eLinkedList.h"
-
+#include "./include/eLinkedList/eLinkedList.h"
 using namespace std;
-
-int main() {
+void singlyLinkedListTest() {
 
     eLinkedList<int> list;
     eLinkedList<char> list2;
@@ -141,6 +139,14 @@ int main() {
 
     list3.clear();
     cout << boolalpha << list3.empty() << endl;
+
+}
+
+void doublyLinkedListTest() {
+
+}
+
+int main() {
 
     return 0;
 }

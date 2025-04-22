@@ -7,12 +7,16 @@ set(CMAKE_CXX_STANDARD 17)
 include_directories(include)
 
 add_executable(eSTL main.cpp
-        include/eStl/eLinkedList/eLinkedList.h
-        include/eStl/eLinkedList/Node.h
+        include/eLinkedList/eLinkedList.h
+        include/eLinkedList/ForwardListNode.h
+        src/eDoublyLinkedList/eDoublyLinkedList.tpp
+        include/eDoublyLinkedList/eDoublyLinkedList.h
+        src/eDoublyLinkedList/DoublyListNode.tpp
+        include/eDoublyLinkedList/DoublyListNode.h
 
 )
 
 # Add source files
 target_sources(eSTL PUBLIC src/eLinkedList/eLinkedList.tpp
-                    PUBLIC src/eLinkedList/Node.cpp
+                    PUBLIC src/eLinkedList/ForwardListNode.tpp
 )

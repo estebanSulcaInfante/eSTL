@@ -6,10 +6,10 @@
 #define ESTL_ELINKEDLIST_H
 #include "iostream"
 
-#include "Node.h"
+#include "ForwardListNode.h"
 template<typename T>
 class eLinkedList {
-    Node<T> *head;
+    ForwardListNode<T> *head;
 public:
     eLinkedList();
     ~eLinkedList();
@@ -26,9 +26,9 @@ public:
     T operator[](int);
     int size();
     void clear();
-    Node<T> *getMiddle(Node<T>* start);
-    Node<T> *merge(Node<T> *left, Node<T> *right);
-    Node<T> *mergeSort(Node<T> *start);
+    ForwardListNode<T> *getMiddle(ForwardListNode<T>* start);
+    ForwardListNode<T> *merge(ForwardListNode<T> *left, ForwardListNode<T> *right);
+    ForwardListNode<T> *mergeSort(ForwardListNode<T> *start);
     void sort();
     void reverse();
     void show();
