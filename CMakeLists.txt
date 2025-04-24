@@ -19,6 +19,6 @@ add_executable(eSTL main.cpp
 )
 
 # Add source files
-target_sources(eSTL PUBLIC src/eLinkedList/eLinkedList.tpp
-                    PUBLIC src/eLinkedList/ForwardListNode.tpp
+target_sources(eSTL PUBLIC src/eSinglyLinkedList/eLinkedList.tpp
+                    PUBLIC src/eSinglyLinkedList/ForwardListNode.tpp
 )
