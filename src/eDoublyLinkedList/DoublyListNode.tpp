@@ -10,7 +10,11 @@ DoublyListNode<T>::DoublyListNode(): val(T()), next(nullptr), prev(nullptr){}
 
 template<typename T>
 DoublyListNode<T>::DoublyListNode(T val): next(nullptr), prev(nullptr) {
-    this.val = val;
+    this->val = val;
+}
+
+template<typename T>
+DoublyListNode<T>::~DoublyListNode() {
 }
 
 #endif

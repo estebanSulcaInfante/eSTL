@@ -14,7 +14,7 @@ struct DoublyListNode {
 
     DoublyListNode();
     explicit DoublyListNode(T val);
-
+    ~DoublyListNode();
 };
 
 #include "../../src/eDoublyLinkedList/DoublyListNode.tpp"

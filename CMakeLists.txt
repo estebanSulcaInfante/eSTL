@@ -13,6 +13,8 @@ add_executable(eSTL main.cpp
         include/eDoublyLinkedList/eDoublyLinkedList.h
         src/eDoublyLinkedList/DoublyListNode.tpp
         include/eDoublyLinkedList/DoublyListNode.h
+        tests/singlyLinkedListTest.h
+        tests/doublyLinkedListTest.h
 
 )
 
