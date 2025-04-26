@@ -1,0 +1,77 @@
+#################################################################
+
+DOXYFILE
+
+Configuración para el proyecto eSTL
+
+#################################################################
+
+---- Información general ----
+
+PROJECT_NAME           = "eSTL — Estructuras de Datos en C++"
+PROJECT_BRIEF          = "Implementaciones from scratch de estructuras de datos en C++"
+PROJECT_NUMBER         = 0.1.0
+OUTPUT_DIRECTORY       = docs
+OUTPUT_LANGUAGE        = Spanish
+CREATE_SUBDIRS         = NO
+
+---- Entradas ----
+
+INPUT                  = include src README.md docs
+FILE_PATTERNS          = *.h *.hpp *.tpp *.cpp *.md
+RECURSIVE              = YES
+EXCLUDE_PATTERNS       = /cmake-build- /.git/
+
+---- Extracción de documentación ----
+
+EXTRACT_ALL            = YES
+EXTRACT_PRIVATE        = YES
+EXTRACT_STATIC         = YES
+EXTRACT_LOCAL_CLASSES  = YES
+EXTRACT_ANON_NSPACES   = YES
+
+---- Alias personalizados ----
+
+ALIASES                += "complexity=\par\textbf{Complejidad:} "
+
+---- Salida HTML ----
+
+GENERATE_HTML          = YES
+HTML_OUTPUT            = html
+GENERATE_TREEVIEW      = YES
+
+---- Salida LaTeX + PDF ----
+
+GENERATE_LATEX         = YES
+LATEX_OUTPUT           = latex
+USE_PDFLATEX           = YES
+PDF_HYPERLINKS         = YES
+LATEX_BATCHMODE        = YES
+LATEX_HEADER           = docs/latex_header.tex
+LATEX_CMD_NAME = pdflatex
+LATEX_EXTRA_STYLESHEET = book.cls
+---- Diagramas ----
+
+HAVE_DOT               = YES
+DOT_MULTI_TARGETS      = YES
+INTERACTIVE_SVG        = YES
+CALL_GRAPH             = YES
+CALLER_GRAPH           = YES
+CLASS_DIAGRAMS         = YES
+DOT_IMAGE_FORMAT       = svg
+
+---- Rutas de imágenes para @image ----
+
+IMAGE_PATH             = docs/img
+
+---- Warnings ----
+
+WARN_IF_UNDOCUMENTED   = YES
+WARN_NO_PARAMDOC       = YES
+
+---- Miscelánea ----
+
+QUIET                  = NO
+GENERATE_TAGFILE       = docs/eSTL.tag
+
+

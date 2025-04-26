@@ -4,14 +4,14 @@
 #ifndef ESTL_ELINKEDLIST_TPP
 #define ESTL_ELINKEDLIST_TPP
 
-#include "eLinkedList/eLinkedList.h"
+#include "eSinglyLinkedList/eLinkedList.h"
 
 template <typename T>
 eLinkedList<T>::eLinkedList() : head(nullptr){}
 
 template <typename T>
 eLinkedList<T>::~eLinkedList() {
-    ForwardListNode<T> *temp = head;
+    SinglyLinkedListNode<T> *temp = head;
     while (head) {
         head = head->next;
         delete temp;
@@ -25,9 +25,9 @@ bool eLinkedList<T>::empty() const {
 }
 
 template<typename T>
-int eLinkedList<T>::size() {
+int eLinkedList<T>::size() const {
     int count = 0;
-    ForwardListNode<T> *temp = head;
+    SinglyLinkedListNode<T> *temp = head;
     while(temp) {
         temp = temp->next;
         count++;
@@ -37,18 +37,18 @@ int eLinkedList<T>::size() {
 
 template<typename T>
 void eLinkedList<T>::push_front(T value) {
-    auto *newNode = new ForwardListNode<T>(value);
+    auto *newNode = new SinglyLinkedListNode<T>(value);
     newNode->next = head;
     head = newNode;
 }
 
 template<typename T>
 void eLinkedList<T>::push_back(T value) {
-    auto *newNode = new ForwardListNode<T>(value);
+    auto *newNode = new SinglyLinkedListNode<T>(value);
     if (head == nullptr) {
         head = newNode;
     } else {
-        ForwardListNode<T> *temp = head;
+        SinglyLinkedListNode<T> *temp = head;
         while (temp->next) {
             temp = temp->next;
         }
@@ -63,7 +63,7 @@ T eLinkedList<T>::front() {
 
 template<typename T>
 T eLinkedList<T>::back() {
-    ForwardListNode<T> *temp = head;
+    SinglyLinkedListNode<T> *temp = head;
     while (temp->next) {
         temp = temp->next;
     }
@@ -72,7 +72,7 @@ T eLinkedList<T>::back() {
 
 template<typename T>
 void eLinkedList<T>::show() {
-    ForwardListNode<T> *temp = head;
+    SinglyLinkedListNode<T> *temp = head;
     while (temp) {
         std::cout << temp->val << " ";
         temp = temp->next;
@@ -83,7 +83,7 @@ void eLinkedList<T>::show() {
 template<typename T>
 T eLinkedList<T>::pop_front() {
     T val = head->val;
-    ForwardListNode<T> *temp = head;
+    SinglyLinkedListNode<T> *temp = head;
     head = head->next;
     delete temp;
     return val;
@@ -91,7 +91,7 @@ T eLinkedList<T>::pop_front() {
 
 template<typename T>
 T eLinkedList<T>::pop_back() {
-    ForwardListNode<T> *temp = head;
+    SinglyLinkedListNode<T> *temp = head;
     while (temp->next->next) {
         temp = temp->next;
     }
@@ -103,7 +103,7 @@ T eLinkedList<T>::pop_back() {
 
 template<typename T>
 T eLinkedList<T>::operator[](int index) {
-    ForwardListNode<T> *temp = head;
+    SinglyLinkedListNode<T> *temp = head;
     for (int i = 0; i < index; i++) {
         temp = temp->next;
     }
@@ -112,7 +112,7 @@ T eLinkedList<T>::operator[](int index) {
 
 template<typename T>
 void eLinkedList<T>::clear() {
-    ForwardListNode<T> *temp = head;
+    SinglyLinkedListNode<T> *temp = head;
     while (temp) {
         head = head->next;
         delete temp;
@@ -122,7 +122,7 @@ void eLinkedList<T>::clear() {
 
 template<typename T>
 void eLinkedList<T>::reverse() {
-    ForwardListNode<T> *prev = nullptr, *curr = head, *next = head;
+    SinglyLinkedListNode<T> *prev = nullptr, *curr = head, *next = head;
     while (curr) {
         next = curr->next;
         curr->next = prev;
@@ -133,10 +133,10 @@ void eLinkedList<T>::reverse() {
 }
 
 template<typename T>
-ForwardListNode<T> *eLinkedList<T>::getMiddle(ForwardListNode<T>* start) {
+SinglyLinkedListNode<T> *eLinkedList<T>::getMiddle(SinglyLinkedListNode<T>* start) {
     if(!start) return nullptr;
 
-    ForwardListNode<T> *slow = start, *fast = start->next;
+    SinglyLinkedListNode<T> *slow = start, *fast = start->next;
     while(fast && fast->next) {
         slow = slow->next;
         fast = fast->next->next;
@@ -145,7 +145,7 @@ ForwardListNode<T> *eLinkedList<T>::getMiddle(ForwardListNode<T>* start) {
 }
 
 template<typename T>
-ForwardListNode<T> *eLinkedList<T>::merge(ForwardListNode<T> *left, ForwardListNode<T> *right) {
+SinglyLinkedListNode<T> *eLinkedList<T>::merge(SinglyLinkedListNode<T> *left, SinglyLinkedListNode<T> *right) {
     if(!left) return right;
     if(!right) return left;
     if(left->val < right->val) {
@@ -158,16 +158,16 @@ ForwardListNode<T> *eLinkedList<T>::merge(ForwardListNode<T> *left, ForwardListN
 }
 
 template<typename T>
-ForwardListNode<T> *eLinkedList<T>::mergeSort(ForwardListNode<T> *start) {
+SinglyLinkedListNode<T> *eLinkedList<T>::mergeSort(SinglyLinkedListNode<T> *start) {
     if(!start || !start->next) return start;
 
-    ForwardListNode<T> *mid = getMiddle(start);
-    ForwardListNode<T> *midNext = mid->next;
+    SinglyLinkedListNode<T> *mid = getMiddle(start);
+    SinglyLinkedListNode<T> *midNext = mid->next;
 
     mid->next = nullptr;
 
-    ForwardListNode<T> *left = mergeSort(start);
-    ForwardListNode<T> *right = mergeSort(midNext);
+    SinglyLinkedListNode<T> *left = mergeSort(start);
+    SinglyLinkedListNode<T> *right = mergeSort(midNext);
 
     return merge(left, right);
 }

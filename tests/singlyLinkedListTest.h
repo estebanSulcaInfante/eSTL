@@ -1,7 +1,7 @@
 #ifndef TESTS_SINGLYLINKEDLIST_H
 #define TESTS_SINGLYLINKEDLIST_H
 
-#include "../include/eLinkedList/eLinkedList.h"
+#include "../include/eSinglyLinkedList/eLinkedList.h"
 #include <cassert>
 #include <cmath>
 #include <iostream>
